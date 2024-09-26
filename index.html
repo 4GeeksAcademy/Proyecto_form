@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Formulario</title>
+</head>
+
+<body>
+  <!-- titulo -->
+  <div class="card" style="width:80%; margin: 10%; margin-top:3%;">
+    <div class="card-header" style="background-color:cornsilk;">
+      <h1>Payment from example</h1>
+    </div>
+    <!-- Mensaje error -->
+    <div id="error-msg" class="alert alert-danger">Some fields are missing</div>
+    <form class="row g-3 needs-validation" novalidate style="margin: 5px;">
+      <!-- Card -->
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip01" class="form-label"><strong>Card#</strong></label>
+        <input type="text" class="form-control" placeholder="XXXXXXXXXXXXXX" id="validationTooltip01">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <!-- CVC -->
+
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label"><strong>CVC#</strong></label>
+        <input type="text" class="form-control" placeholder="0000" id="validationTooltip02">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+
+      <!-- Amount -->
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltipUsername" class="form-label"><strong>Amount</strong></label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="validationTooltipUsernamePrepend">$</span>
+          <input type="text" class="form-control" placeholder="Amount" id="validationTooltipUsername"
+            aria-describedby="validationTooltipUsernamePrepend" required>
+          <div class="invalid-tooltip">
+            Please choose a unique and valid username.
+          </div>
+        </div>
+      </div>
+
+      <!-- first name -->
+      <div class="col-md-6 position-relative">
+        <label for="validationTooltip02" class="form-label"><strong>First Name</strong></label>
+        <input type="text" class="form-control" id="validationTooltip02">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+
+      <!-- Last Name -->
+      <div class="col-md-6 position-relative">
+        <label for="validationTooltip02" class="form-label"><strong>Last Name</strong></label>
+        <input type="text" class="form-control" id="validationTooltip02">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+
+      <!-- city -->
+      <div class="col-md-6 position-relative">
+        <label for="validationTooltip03" class="form-label"><strong>City</strong></label>
+        <input type="text" class="form-control" id="validationTooltip03" required>
+        <div class="invalid-tooltip">
+          Please provide a valid city.
+        </div>
+      </div>
+
+      <!-- state -->
+      <div class="col-md-3 position-relative">
+        <label for="validationTooltip04" class="form-label"><strong>State</strong></label>
+        <select class="form-select" id="validationTooltip04" required>
+          <option selected disabled value="">Pick a state</option>
+          <option>...</option>
+        </select>
+        <div class="invalid-tooltip">
+          Please select a valid state.
+        </div>
+      </div>
+
+      <!-- Postal Code -->
+      <div class="col-md-3 position-relative">
+        <label for="validationTooltip05" class="form-label"><strong>Postal Code</strong></label>
+        <input type="text" class="form-control" id="validationTooltip05" required>
+        <div class="invalid-tooltip">
+          Please provide a valid ^Postal Code.
+        </div>
+      </div>
+
+      <!-- cards -->
+      <div class="col-md-6 pb-3">
+        <h6 for="exampleAccount">We accept:</h6>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-secondary">
+            <input autocomplete="off" checked id="blue" name="options" type="radio">
+            <i class="fa-brands fa-cc-mastercard"></i>
+          </label>
+          <label class="btn btn-secondary">
+            <input autocomplete="off" id="red" name="options" type="radio">
+            <i class="fa-brands fa-cc-visa"></i>
+          </label>
+          <label class="btn btn-secondary">
+            <input autocomplete="off" id="green" name="options" type="radio">
+            <i class="fa-brands fa-cc-diners-club"></i>
+          </label>
+          <label class="btn btn-secondary">
+            <input autocomplete="off" id="yellow" name="options" type="radio">
+            <i class="fab fa-cc-amex"></i>
+          </label>
+        </div>
+      </div>
+
+      <!-- Massage  -->
+      <div class="col-md-6 position-relative">
+        <div class="row-md-6">
+          <h6>Messege</h6>
+          <div class="form-floating" class="col-md-3 position-relative">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 100px"></textarea>
+            <label for="floatingTextarea2"></label>
+          </div>
+          <p>Add any notes here.</p>
+        </div>
+      </div>
+
+      <!-- Boton enviar formulario -->
+      <div class="card-footer" >
+        <div class="float-right">
+          <button class="btn btn-secondary" type="reset">Cancel</button>
+          <button id="sendForm" class="btn btn-primary" type="button">Send</button>
+        </div>
+      </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>
